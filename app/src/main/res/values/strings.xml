@@ -1,3 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ The MIT License (MIT)
+  ~ Copyright (c) 2017 Avuton Olrich
+  ~ Copyright (c) 2015 Daniel Barnett
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
 <resources>
-    <string name="app_name">AddressToGPS</string>
+    <string name="address_block_hint">Point of Interest (include city)</string>
+    <string name="contact">Share with Contacts</string>
+    <string name="close">Close</string>
+    <string name="clear">Clear</string>
+    <string name="navigate_button">Navigate</string>
+    <string name="no_map_app_found">No mapping application found.</string>
+    <string name="load_failed">Failed to load necessary web resources.</string>
+    <string name="phone">Phone</string>
+    <string name="reset">Reset</string>
+    <string name="share">Share</string>
 </resources>

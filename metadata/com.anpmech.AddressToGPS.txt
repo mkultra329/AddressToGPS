@@ -1,0 +1,54 @@
+AntiFeatures:NonFreeNet
+Categories:Navigation
+License:MIT
+Source Code:https://github.com/avuton/AddressToGPS
+Issue Tracker:https://github.com/avuton/AddressToGPS/issues
+
+Auto Name:AddressToGPS
+Summary:A simple point of interest search
+Description: Search for a point of interest for the Google Maps javascript API. Once a point
+of interest has been selected, the coordinates will be returned for use in a mapping application,
+or sharing it with another application. This application requires no location information, only
+access to the Internet.
+
+
+Repo Type:git
+Repo:https://github.com/avuton/AddressToGPS
+
+Build:1.0,1
+    commit=v1.05
+    subdir=app
+    gradle=yes
+
+Build:1.09,9
+    commit=1.09
+    subdir=app
+    gradle=yes
+
+Build:1.1,10
+    disable=package id changed
+    commit=1.1
+    subdir=app
+    gradle=yes
+
+Build:1.11,11
+    commit=1.11
+    subdir=app
+    gradle=yes
+
+Build:1.12,12
+    commit=1.12
+    subdir=app
+    gradle=yes
+
+Build:1.30,13
+    commit=1.30
+    subdir=app
+    gradle=yes
+
+Auto Update Mode:None
+Update Check Mode:Tags
+Current Version:1.30
+Current Version Code:13
+
+

@@ -1,58 +1,33 @@
-var map;
-var marker = null;
-var fromPlace = 0;
-var locationFromPlace;
-
 function initialize() {
-    var address = document.getElementById('address');
+    var address = document.getElementById('address_input');
     autocomplete = new google.maps.places.Autocomplete(address);
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-        var place = autocomplete.getPlace();
-        if (!place.geometry) {
-            fromPlace = 0;
-            getgps();
-            return;
-        }
-        fromPlace = 1;
-        locationFromPlace = place.geometry.location;
-        getgps();
-    });
-    map = new google.maps.Map(document.getElementById("map_canvas"));
-    google.maps.event.addListener(map, 'click');
+
+    google.maps.event.addListener(autocomplete, 'place_changed', autocompleteCallback);
 }
 
-function setFocus(lookup) {
-    document.getElementById('address').value = lookup.toString();
-    document.getElementById('address').focus();
-}
+function autocompleteCallback() {
+    var place = autocomplete.getPlace();
 
-function openInMaps() {
-    var gpsLink = document.getElementById("coordlink").innerHTML;
+    if (place.geometry) {
+        var locationFromPlace = place.geometry.location;
+        var address = document.getElementById('address_input');
+        new google.maps.Map(document.getElementById('map_canvas')).setCenter(locationFromPlace);
 
-    window.JSInterface.openLink(gpsLink);
-}
-
-function getgps() {
-    var address = document.getElementById("address").value;
-    if (fromPlace == 1) {
-        map.setCenter(locationFromPlace);
-        if (marker != null) marker.setMap(null);
-        marker = new google.maps.Marker({
-            map: map,
-            position: locationFromPlace
-        });
-        latt = locationFromPlace.lat();
-        long = locationFromPlace.lng();
-        var coordlink = latt + "," + long;
-        document.getElementById("coordtext").innerHTML = coordlink;
-        document.getElementById("coordlink").innerHTML = "geo:" + coordlink;
-        document.getElementById("latitude").value = latt;
-        document.getElementById("longitude").value = long;
+        window.JSInterface.coordinates(address.value, locationFromPlace.toUrlValue(),
+                                        place.formatted_phone_number);
+        google.maps.event.clearListeners(autocomplete, 'place_changed');
     }
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+function setFocus(lookup) {
+    var address = document.getElementById('address_input');
 
+    address.value = lookup.toString();
+    address.focus();
+}
 
-
-
+try {
+    google.maps.event.addDomListener(window, 'load', initialize);
+} catch (err) {
+    window.JSInterface.completeReset()
+}
